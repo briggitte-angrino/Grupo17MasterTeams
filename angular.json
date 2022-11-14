@@ -23,9 +23,15 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/materialize-css/dist/css/materialize.min.css",
+              "src/assets/css/estilospropios.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/materialize-css/dist/js/materialize.min.js",
+              "src/assets/js/M-init.js",
+              "src/assets/js/funcionesPropias.js"
+            ]
           },
           "configurations": {
             "production": {
