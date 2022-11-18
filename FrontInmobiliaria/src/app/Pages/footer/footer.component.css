@@ -1,0 +1,10 @@
+:root {
+    --logo_01: rgb(254, 79, 136);
+    --logo_02: #7c2176;
+    --logo_03: #fe5088;
+    --form: rgba(217, 217, 217, 1);
+    --white01:white;
+}
+footer {
+    background-color: #fe5088;
+}

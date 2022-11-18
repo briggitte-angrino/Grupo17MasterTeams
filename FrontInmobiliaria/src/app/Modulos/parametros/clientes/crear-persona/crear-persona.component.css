@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Nunito:wght@300&display=swap');
+:root {
+    --logo_01: rgb(254, 79, 136);
+    --logo_02: #7c2176;
+    --logo_03: #fe5088;
+    --form: rgb(254, 255, 246);
+    --white01:white;
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: 'Nunito', sans-serif;
+    background-color:#fefbf8 ;
+
+}
+
+.logo {
+    text-align: center;
+    margin-top: 80px;
+}
+
+
+
+/* contenedor del container*/
+.container {
+    width: 450px;
+    height: 550px;
+    margin: 50px auto 0 auto;
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 160px;
+    /*box-shadow: -2px 2px 3px  rgba(80, 80, 80, 0.2);*/
+}
+
+.container-title {
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+
+.container-form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 350px;
+    height: 380px;
+    margin: 0 auto;
+}
+.container-foot {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 450px;
+    height: 50px;
+    border-radius: 0 0 10px 10px;
+    background-color:  #fe5088;
+    font-size: 16px;
+}
+.form01,.form02 {
+    width: 270px;
+    height: 55px;
+    text-align: center;
+    border: solid 1px var(--logo_03);
+    border-radius: 50px;
+    outline: 0;
+}
+
+.button-login {
+    width: 180px;
+    height: 60px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-radius: 50px;
+
+    color: white;
+    background-color:  #fe5088;
+    font-size: 21px;
+    font-family: 'Nunito';
+    font-weight: 550;
+}
+.button-change {
+    width: 250px;
+    height: 60px;
+    margin-top: 20px;
+    border: 0;
+    border-radius: 50px;
+
+    color: var(--white01);
+    background-color:  #fe5088;
+    font-size: 21px;
+    font-family: 'Nunito';
+    font-weight: 800;
+}
+.button-change:hover {
+    width: 250px;
+    height: 60px;
+    margin-top: 20px;
+    border: 0;
+    border-radius: 50px;
+
+    color: var(--white01);
+    background-color:#c29cbf;
+    font-size: 21px;
+    font-family: 'Nunito';
+    font-weight: 800;
+}
+.login-link {
+    color: white;
+}

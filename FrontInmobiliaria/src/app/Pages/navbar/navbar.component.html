@@ -1,0 +1,22 @@
+<nav >
+    <div class="nav-wrapper white ">
+      <a routerLink="" class="brand-logo" style="color: black;">
+        <img  width="25px" [src]="img" alt="">
+        HOME</a>
+      <a routerLink="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li *ngIf="!sesionActiva" ><a routerLink="seguridad/registrese" style="color: black;font-weight:500;">REGISTRATE</a></li>
+        <li *ngIf="sesionActiva" ><a routerLink="badges.html">Comprar</a></li>
+        <li *ngIf="sesionActiva" ><a routerLink="collapsible.html">Vender</a></li>
+        <li *ngIf="!sesionActiva" ><a routerLink="seguridad/login" style="color: black;font-weight: 500;">LOGIN</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li><a routerLink="seguridad/registrese">Registrese</a></li>
+    <li><a routerLink="badges.html">Comprar</a></li>
+    <li><a routerLink="collapsible.html">Vender</a></li>
+    <li><a routerLink="seguridad/login">Login</a></li>
+  </ul>
+          

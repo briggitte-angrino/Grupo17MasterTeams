@@ -1,0 +1,80 @@
+<body>    
+
+<header>
+    <figure class="logo">
+        <img width="350" [src]="img" alt="">
+    </figure>
+</header>
+
+<div class="container">
+    <h2 class="container-title">Iniciar sesión</h2>
+    <form [formGroup]="formularioLogin" action="" class="container-form">
+        <input  
+        style="
+        width: 270px;
+    height: 55px;
+    margin-bottom: 10px;
+    text-align: center;
+    border: solid 1px #fe5088;
+    border-radius: 50px;
+    outline: 0;
+        
+        "
+        formControlName="usuario" class="form01" type="text" placeholder="Cédula o nombre de usuario">
+        <div class="errorValidacion">
+            <label *ngIf="formularioLogin.controls['usuario'].errors && formularioLogin.controls['usuario'].dirty" for="">
+                Los datos ingresados no son validos, ingrese su correo
+            </label>
+        </div>
+        <input style="
+        width: 270px;
+    height: 55px;
+    margin-bottom: 10px;
+    text-align: center;
+    border: solid 1px #fe5088;
+    border-radius: 50px;
+    outline: 0;"
+        
+        formControlName="pass" class="form02" type="password" placeholder="Contraseña">
+        <div class="errorValidacion">
+            <label *ngIf="formularioLogin.controls['pass'].errors && formularioLogin.controls['pass'].dirty" for="">
+                Su contraseña debera contener al menos 8 caracteres
+            </label>
+        </div>
+        <div class="check">
+            <div class="recuerdame" >
+                <input type="checkbox" name="recuerdame" id="recuerdame">
+                <label for="recuerdame">Recuérdame</label>
+                
+            </div>                
+            <p class="recuperarMensaje" ><a class="recuperar-Link" href="">Olvidaste tu contraseña</a> </p>
+        </div>            
+        <button style="
+        
+    width: 180px;
+    height: 55px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    border: 0;
+    border-radius: 50px;
+    color: white;
+    background-color: #fe5088;
+    font-size: 30px;
+    cursor: pointer;
+    font-family: 'Nunito';
+    font-weight: 500;"  [disabled]="formularioLogin.controls['usuario'].errors" (click)="Login()" class="button" type="submit" name="action" >Entrar</button>
+    </form>
+    <div class="container-registro" style="display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 390px;
+    height: 56px;
+    border-radius: 0 0 10px 10px;
+    background-color: #fe5088;
+    color: white">¿No tienes cuenta?
+        <a class="registro-Link" href="seguridad/registrese">Abrir cuenta</a>
+    </div>
+</div>
+</body>
