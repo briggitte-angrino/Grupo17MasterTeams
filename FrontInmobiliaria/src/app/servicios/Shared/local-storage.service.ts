@@ -32,10 +32,20 @@ export class LocalStorageService {
   ObtenerToken():string{
     let datosActuales= localStorage.getItem("datossesion");
     if (datosActuales) {
-      let datosSesionJSON=JSON.parse(datosActuales);
-      return datosSesionJSON.tk;
+      let datosSesionJson=JSON.parse(datosActuales);
+      return datosSesionJson.tk;
     } else {
       return "";
+    }
+  }
+
+  ObtenerDatosDeLaSesion():DatosSesionModel | null{
+    let datosActuales = localStorage.getItem("datossesion");
+    if (datosActuales) {
+      let datosSesionJson=JSON.parse(datosActuales);
+      return datosSesionJson;
+    } else {
+      return null;
     }
   }
 }

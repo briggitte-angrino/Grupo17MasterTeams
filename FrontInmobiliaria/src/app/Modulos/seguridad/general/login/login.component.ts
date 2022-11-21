@@ -1,7 +1,10 @@
 import { group } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { CredencialesModel } from 'src/app/Modelos/credenciales.model';
+import { DatosSesionModel } from 'src/app/Modelos/datos-sesion.model';
+import { LocalStorageService } from 'src/app/servicios/Shared/local-storage.service';
 import { SeguridadService } from 'src/app/servicios/Shared/seguridad.service';
 const CryptoJS = require('crypto-js');
 declare const GenerarVentanaModal:any;
@@ -19,7 +22,9 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private servicioSeguridad: SeguridadService
+    private servicioSeguridad: SeguridadService,
+    private servicioLocalStorage: LocalStorageService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -28,8 +33,8 @@ export class LoginComponent implements OnInit {
 
   ConstruccionFormulario() {
     this.formularioLogin = this.fb.group({
-      usuario: ["",[Validators.required, Validators.email]],
-      pass: ["",[Validators.required, Validators.minLength(8)]]
+      usuario: ["angrinobriggitte@gmail.com",[Validators.required, Validators.email]],
+      pass: ["123456",[Validators.required, Validators.minLength(8)]]
     });
   }
 
@@ -41,8 +46,12 @@ export class LoginComponent implements OnInit {
       credenciales.usuario=this.formularioLogin.controls['usuario'].value;
       credenciales.password=CryptoJS.MD5(this.formularioLogin.controls['pass'].value).toString();
       this.servicioSeguridad.Login(credenciales).subscribe({
-        next: (data:any)=>{
+        next: (data:DatosSesionModel)=>{
           console.log(data);
+          let guardar=this.servicioLocalStorage.GuardarDatosSesion(data);
+          data.isLoggIn=true;
+          this.servicioSeguridad.RefrescarDatosSesion(data);
+          this.router.navigate(['/home'])
         },
         error: (e)=>console.log(e)
       });

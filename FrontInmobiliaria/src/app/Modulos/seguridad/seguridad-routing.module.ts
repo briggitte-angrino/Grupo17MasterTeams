@@ -14,6 +14,10 @@ const routes: Routes = [
     component: CrearPersonaComponent
   },
   {
+    path: "logout",
+    component: LoginComponent
+  },
+  {
     path:"**",
     component: PageNotFoundComponent
   }

@@ -193,14 +193,19 @@ export class UsuarioController{
 })
 
 async identificarToken(
-  @requestBody() credendiales: Credenciales
+  @requestBody() credenciales: Credenciales
 ){
-  let p= await this.servicioAutenticacion.IdentificarUsuario(credendiales);
-  if (p) {
-    let token = this.servicioAutenticacion.GeneracionToken(p);
+  let user= await this.servicioAutenticacion.IdentificarUsuario(credenciales);
+  if (user) {
+    let token = this.servicioAutenticacion.GeneracionToken(user);
     return {
-      respuesta:{
-        nombre: p.nombre
+      info:{
+        nombre: user.nombre,
+        correo: user.correo,
+        id: user.id,
+        perfil: user.perfil,
+        roles: user.roles
+
      },
      tk: token
     }

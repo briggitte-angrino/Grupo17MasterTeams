@@ -10,6 +10,7 @@ import { EditarUserComponent } from './usuarios/editar-user/editar-user.componen
 import { ConsultarUserComponent } from './usuarios/consultar-user/consultar-user.component';
 import { EliminarUserComponent } from './usuarios/eliminar-user/eliminar-user.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LogoutComponent } from './general/logout/logout.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CrearUserComponent,
     EditarUserComponent,
     ConsultarUserComponent,
-    EliminarUserComponent
+    EliminarUserComponent,
+    LogoutComponent
   ],
   imports: [
     CommonModule,
