@@ -16,7 +16,9 @@ export class SeguridadService {
   constructor(
     private http: HttpClient,
     private servicioLocalStorage: LocalStorageService
-  ) { }
+  ) {
+    this.VerificarSesionActiva();
+   }
 
   Login(credenciales: CredencialesModel):Observable<any>{
     return this.http.post(`${this.url}/Login`,credenciales);

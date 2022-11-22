@@ -1,4 +1,4 @@
-<nav >
+<nav>
     <div class="nav-wrapper white ">
       <a routerLink="" class="brand-logo" style="color: black;">
         <img  width="25px" [src]="img" alt="">
@@ -6,8 +6,21 @@
       <a routerLink="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li *ngIf="!sesionActiva" ><a routerLink="seguridad/registrese" style="color: black;font-weight:500;">REGISTRATE</a></li>
-        <li *ngIf="sesionActiva" ><a routerLink="badges.html">Comprar</a></li>
-        <li *ngIf="sesionActiva" ><a routerLink="collapsible.html">Vender</a></li>
+        <li *ngIf="!sesionActiva" ><a class=" btn dropdown-trigger white" data-target="dropdown2"  style="color: black;font-weight:500;">CONFIGURACIÓN<i class="material-icons right">arrow_drop_down</i></a>
+          <ul id="dropdown2" class="dropdown-content">
+            <li><a routerLink="parametros/ciudad">Ciudad</a></li>
+            <li><a routerLink="parametros/departamento">Departamento</a></li>
+            <li><a routerLink="parametros/roles">Roles</a></li>
+            <li><a routerLink="parametros/estadosolicitud">Estado de solicitud</a></li>
+            <li><a routerLink="parametros/solicitud">Solicitud</a></li>
+            <li><a routerLink="parametros/tipoinmueble">Tipo Inmueble</a></li>
+            <li><a routerLink="parametros/tipooferta">Tipo Oferta</a></li>
+            <li><a routerLink="parametros/codeudor">Codeudor</a></li>
+          </ul>
+        </li>
+
+        <li *ngIf="!sesionActiva" ><a routerLink="parametros/consultar"  style="color: black;font-weight:500;">INMUEBLES</a></li>
+        <li *ngIf="!sesionActiva" ><a routerLink="parametros/"  style="color: black;font-weight:500;">VENDER</a></li>
         <li *ngIf="!sesionActiva" ><a routerLink="seguridad/logout" style="color: black;font-weight: 500;">LOGOUT</a></li>
         <li *ngIf="!sesionActiva" ><a routerLink="seguridad/login" style="color: black;font-weight: 500;">LOGIN</a></li>
       </ul>
@@ -20,4 +33,4 @@
     <li><a routerLink="collapsible.html">Vender</a></li>
     <li><a routerLink="seguridad/login">Login</a></li>
   </ul>
-          
+

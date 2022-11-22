@@ -12,11 +12,9 @@ import {
   getModelSchemaRef, HttpErrors, param, patch, post, put, requestBody,
   response
 } from '@loopback/rest';
-import {Keys} from '../configuracion/Keys';
-import {Credenciales,} from '../models';
+import {Credenciales, Usuario} from '../models';
 import {UsuarioRepository} from '../repositories';
 import {AutenticacionService} from '../services';
-import { Usuario} from '../models';
 const fetch = require("node-fetch");
 export class UsuarioController{
   constructor(
@@ -44,18 +42,17 @@ export class UsuarioController{
       },
     })
     usuario: Omit<Usuario, 'id'>,
-  ):  Promise<void> {
-    let password = this.servicioAutenticacion.GenerarClave();
-    let claveCifrada= this.servicioAutenticacion.Encriptar(password);
+  ):  Promise<Usuario> {
+    const password = this.servicioAutenticacion.GenerarClave();
+    const claveCifrada= this.servicioAutenticacion.Encriptar(password);
     usuario.password=claveCifrada;
-    let user= await this.usuarioRepository.create(usuario);
+    const user= await this.usuarioRepository.create(usuario);
 
-    if(usuario.perfil=="usuario"){
-      let p= await this.usuarioRepository.create(usuario);
-
+    if(usuario.perfil == "usuario"){
+      const p = await this.usuarioRepository.create(usuario);
     }
 
-
+    return user;
   }
 
   @get('/usuarios/count')
@@ -177,7 +174,7 @@ export class UsuarioController{
   async identificar(
     @requestBody() credenciales: Credenciales
   ): Promise<Usuario | null> {
-    let usuario = await this.usuarioRepository.findOne({
+    const usuario = await this.usuarioRepository.findOne({
       where: {
         correo: credenciales.usuario,
         password: credenciales.password
@@ -195,9 +192,9 @@ export class UsuarioController{
 async identificarToken(
   @requestBody() credenciales: Credenciales
 ){
-  let user= await this.servicioAutenticacion.IdentificarUsuario(credenciales);
+  const user= await this.servicioAutenticacion.IdentificarUsuario(credenciales);
   if (user) {
-    let token = this.servicioAutenticacion.GeneracionToken(user);
+    const token = this.servicioAutenticacion.GeneracionToken(user);
     return {
       info:{
         nombre: user.nombre,

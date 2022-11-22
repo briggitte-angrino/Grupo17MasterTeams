@@ -18,6 +18,10 @@ const routes: Routes = [
     loadChildren: ()=>import("./Modulos/seguridad/seguridad.module").then(x=>x.SeguridadModule)
   },
   {
+    path:"parametros",
+    loadChildren:()=> import("./Modulos/parametros/parametros.module").then(x=>x.ParametrosModule)
+  },
+  {
     path:"**",
     component: PageNotFoundComponent
   }
