@@ -10,6 +10,7 @@
         <li *ngIf="sesionActiva" ><a routerLink="collapsible.html">Vender</a></li>
         <li *ngIf="!sesionActiva" ><a routerLink="seguridad/logout" style="color: black;font-weight: 500;">LOGOUT</a></li>
         <li *ngIf="!sesionActiva" ><a routerLink="seguridad/login" style="color: black;font-weight: 500;">LOGIN</a></li>
+        <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
       </ul>
     </div>
   </nav>
@@ -19,5 +20,6 @@
     <li><a routerLink="badges.html">Comprar</a></li>
     <li><a routerLink="collapsible.html">Vender</a></li>
     <li><a routerLink="seguridad/login">Login</a></li>
+    <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
   </ul>
           
