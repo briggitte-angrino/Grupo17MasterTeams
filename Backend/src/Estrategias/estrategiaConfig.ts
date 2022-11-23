@@ -20,7 +20,7 @@ export class estrategiaConfig implements AuthenticationStrategy{
      if (token){
         let datos=this.servicioAutenticacion.ValidarToken(token);
         if(datos){
-          if (datos.data.rol=="Asesor") {
+          if (datos.data.rol[0].nombre=="Asesor") {
           let perfil: UserProfile = Object.assign({
               nombre: datos.data.nombre
           });

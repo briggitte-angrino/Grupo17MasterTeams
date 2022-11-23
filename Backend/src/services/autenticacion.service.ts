@@ -1,5 +1,6 @@
 import { /* inject, */ BindingScope, injectable} from '@loopback/core';
 import {repository} from '@loopback/repository';
+import generatePassword from 'password-generator';
 import {Keys} from '../configuracion/Keys';
 import {Credenciales, Roles, Usuario} from '../models';
 import {UsuarioRepository} from '../repositories';
@@ -28,13 +29,13 @@ Encriptar(password:string){
 
 IdentificarUsuario(credenciales:Credenciales){
   try {
-    credenciales.password=this.Encriptar(credenciales.password);
+    //credenciales.password=this.Encriptar(credenciales.password);
     let p=this.UsuarioRepository.findOne({
       where: {
         correo: credenciales.usuario,
         password: credenciales.password
 
-       }, include: ['roles']
+       }
     });
     return p;
   } catch {

@@ -26,7 +26,7 @@ export class InmuebleController {
     @repository(InmuebleRepository)
     public inmuebleRepository : InmuebleRepository,
   ) {}
-  @authenticate("admin")
+  
   @post('/inmuebles')
   @response(200, {
     description: 'Inmueble model instance',

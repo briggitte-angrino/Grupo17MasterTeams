@@ -20,7 +20,7 @@ export class estrategiaAdmin implements AuthenticationStrategy{
      if (token){
         let datos=this.servicioAutenticacion.ValidarToken(token);
         if(datos){
-          if (datos.data.rol=="Administrador") {
+          if (datos.data.rol[0].nombre=="Administrador") {
           let perfil: UserProfile = Object.assign({
               nombre: datos.data.nombre
           });

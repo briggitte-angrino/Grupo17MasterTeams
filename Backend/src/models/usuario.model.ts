@@ -47,8 +47,8 @@ export class Usuario extends Entity {
   })
   password?: string;
 
-  @hasMany(() => Roles, {through: {model:() => Roles }})
-  roles: Roles[];
+  @hasOne(() => Roles)
+  roles: Roles;
 
   @property({
     type: 'string',

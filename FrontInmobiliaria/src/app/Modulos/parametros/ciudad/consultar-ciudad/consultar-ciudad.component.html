@@ -1,29 +1,22 @@
 <fieldset class="container responsive-table">
-<legend>Listado de ciudades</legend>
+<legend class="text">Listado de ciudades</legend>
   <table>
     <thead>
       <tr>
-          <th>Name</th>
-          <th>Item Name</th>
-          <th>Item Price</th>
+          <th>Id</th>
+          <th>Nombre</th>
+          <th>Editar</th>
+          <th>Eliminar</th>
+
+
       </tr>
     </thead>
 
     <tbody>
-      <tr>
-        <td>Alvin</td>
-        <td>Eclair</td>
-        <td>$0.87</td>
-      </tr>
-      <tr>
-        <td>Alan</td>
-        <td>Jellybean</td>
-        <td>$3.76</td>
-      </tr>
-      <tr>
-        <td>Jonathan</td>
-        <td>Lollipop</td>
-        <td>$7.00</td>
+      <tr *ngFor="let p of listaCiudad">
+        <td>{{p.id}}</td>
+        <td>{{p.nombreCiudad}}</td>
+        <td><a  routerLink="../editarCiudad/{{p.id}}"><i class="large material-icons">create</i></a></td>
       </tr>
     </tbody>
   </table>

@@ -33,8 +33,8 @@ export class LoginComponent implements OnInit {
 
   ConstruccionFormulario() {
     this.formularioLogin = this.fb.group({
-      usuario: ["angrinobriggitte@gmail.com",[Validators.required, Validators.email]],
-      pass: ["123456",[Validators.required, Validators.minLength(8)]]
+      usuario: ["",[Validators.required, Validators.email]],
+      pass: ["", [Validators.required, Validators.minLength(8)]]
     });
   }
 

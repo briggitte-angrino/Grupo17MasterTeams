@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ConsultarCiudadComponent } from './ciudad/consultar-ciudad/consultar-ciudad.component';
+import { EditarCiudadComponent } from './ciudad/editar-ciudad/editar-ciudad.component';
 import { ConsultarCodeudorComponent } from './codeudor/consultar-codeudor/consultar-codeudor.component';
 import { ConsultarDepartamentoComponent } from './departamento/consultar-departamento/consultar-departamento.component';
 import { ConsultarEstadoSolicitudComponent } from './estado_solicitud/consultar-estado-solicitud/consultar-estado-solicitud.component';
@@ -12,7 +13,10 @@ import { ConsultarTipoOfertaComponent } from './tipo_oferta/consultar-tipo-ofert
 
 const routes: Routes = [
   { path:"consultar",component: ConsultarInmueblesComponent},
+
   { path:"ciudad",component: ConsultarCiudadComponent},
+  { path:"editarCiudad/:id",component: EditarCiudadComponent},
+
   { path:"departamento",component: ConsultarDepartamentoComponent},
   { path:"roles",component: ConsultarRolesComponent},
   { path:"estadosolicitud",component: ConsultarEstadoSolicitudComponent},
@@ -20,6 +24,7 @@ const routes: Routes = [
   { path:"tipoinmueble",component: ConsultarTipoInmuebleComponent},
   { path:"tipooferta",component: ConsultarTipoOfertaComponent},
   { path:"codeudor",component: ConsultarCodeudorComponent},
+
 
 ];
 

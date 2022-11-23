@@ -12,9 +12,11 @@ import {
   getModelSchemaRef, HttpErrors, param, patch, post, put, requestBody,
   response
 } from '@loopback/rest';
-import {Credenciales, Usuario} from '../models';
+import {Keys} from '../configuracion/Keys';
+import {Credenciales,} from '../models';
 import {UsuarioRepository} from '../repositories';
 import {AutenticacionService} from '../services';
+import { Usuario} from '../models';
 const fetch = require("node-fetch");
 export class UsuarioController{
   constructor(
@@ -42,17 +44,18 @@ export class UsuarioController{
       },
     })
     usuario: Omit<Usuario, 'id'>,
-  ):  Promise<Usuario> {
-    const password = this.servicioAutenticacion.GenerarClave();
-    const claveCifrada= this.servicioAutenticacion.Encriptar(password);
+  ):  Promise<void> {
+    let password = this.servicioAutenticacion.GenerarClave();
+    let claveCifrada= this.servicioAutenticacion.Encriptar(password);
     usuario.password=claveCifrada;
-    const user= await this.usuarioRepository.create(usuario);
+    let user= await this.usuarioRepository.create(usuario);
 
-    if(usuario.perfil == "usuario"){
-      const p = await this.usuarioRepository.create(usuario);
+    if(usuario.perfil=="usuario"){
+      let p= await this.usuarioRepository.create(usuario);
+
     }
 
-    return user;
+
   }
 
   @get('/usuarios/count')
@@ -171,10 +174,10 @@ export class UsuarioController{
     }
 
   })
-  async identificar(
+  async identificarUser(
     @requestBody() credenciales: Credenciales
   ): Promise<Usuario | null> {
-    const usuario = await this.usuarioRepository.findOne({
+    let usuario = await this.usuarioRepository.findOne({
       where: {
         correo: credenciales.usuario,
         password: credenciales.password
@@ -190,19 +193,14 @@ export class UsuarioController{
 })
 
 async identificarToken(
-  @requestBody() credenciales: Credenciales
+  @requestBody() credendiales: Credenciales
 ){
-  const user= await this.servicioAutenticacion.IdentificarUsuario(credenciales);
-  if (user) {
-    const token = this.servicioAutenticacion.GeneracionToken(user);
+  let p= await this.servicioAutenticacion.IdentificarUsuario(credendiales);
+  if (p) {
+    let token = this.servicioAutenticacion.GeneracionToken(p);
     return {
-      info:{
-        nombre: user.nombre,
-        correo: user.correo,
-        id: user.id,
-        perfil: user.perfil,
-        roles: user.roles
-
+      respuesta:{
+        nombre: p.nombre
      },
      tk: token
     }
@@ -210,4 +208,27 @@ async identificarToken(
     throw new HttpErrors[401]("Datos invalidos");
   }
 }
+
+@post('/login')
+@response(200,{
+  description: "Igreso de usuario de la app"
+  })
+
+  async identificar(
+    @requestBody () credenciales : Credenciales
+  ){
+  let user= await this.servicioAutenticacion.IdentificarUsuario(credenciales);
+  if (user) {
+    let token= this.servicioAutenticacion.GeneracionToken(user)
+    return {
+      info:{
+        nombre: user.nombre
+      },
+      tk: token
+    }
+  } else {
+    throw new HttpErrors [401]("usuario no corresponde invalido");
+  }
+
+ }
 }
