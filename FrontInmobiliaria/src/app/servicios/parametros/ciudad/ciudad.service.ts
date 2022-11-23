@@ -28,6 +28,6 @@ export class CiudadService {
         Headers: new HttpHeaders({
          Authoriation:`Bearer ${this.servicioLocalStorage.ObtenerToken}`
         })
-    })
+    });
   }
 }
