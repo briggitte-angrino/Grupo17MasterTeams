@@ -35,8 +35,8 @@ export class LoginComponent implements OnInit {
 
   ConstruccionFormulario() {
     this.formularioLogin = this.fb.group({
-      usuario: ["",[Validators.required, Validators.email]],
-      pass: ["", [Validators.required, Validators.minLength(8)]]
+      usuario: ["Ser@gmail.com",[Validators.required, Validators.email]],
+      pass: ["WalojfOq", [Validators.required, Validators.minLength(8)]]
     });
     recaptcha:["",[Validators.required]]
     this.siteKey="6LfXGCwjAAAAAPweCwI-Ny88gFcGIJitSG5-hCzs";

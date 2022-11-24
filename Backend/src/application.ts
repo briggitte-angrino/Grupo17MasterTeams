@@ -42,9 +42,9 @@ export class Inmobiliaria extends BootMixin(
         nested: true,
       },
     };
-    registerAuthenticationStrategy(this,estrategiaConfig);
-    registerAuthenticationStrategy(this,estrategiaAdmin);
     this.component(AuthenticationComponent);
+    registerAuthenticationStrategy(this,estrategiaConfig);
+    registerAuthenticationStrategy(this,estrategiaAdmin);    
   }
 }
 
