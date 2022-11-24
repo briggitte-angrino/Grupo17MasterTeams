@@ -20,6 +20,8 @@ export class LoginComponent implements OnInit {
 
   formularioLogin: FormGroup = new FormGroup({});
 
+  siteKey:string="";
+
   constructor(
     private fb: FormBuilder,
     private servicioSeguridad: SeguridadService,
@@ -36,6 +38,8 @@ export class LoginComponent implements OnInit {
       usuario: ["",[Validators.required, Validators.email]],
       pass: ["", [Validators.required, Validators.minLength(8)]]
     });
+    recaptcha:["",[Validators.required]]
+    this.siteKey="6LfXGCwjAAAAAPweCwI-Ny88gFcGIJitSG5-hCzs";
   }
 
   Login() {

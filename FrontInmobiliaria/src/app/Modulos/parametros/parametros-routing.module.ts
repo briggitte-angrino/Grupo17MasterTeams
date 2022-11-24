@@ -6,6 +6,7 @@ import { ConsultarCodeudorComponent } from './codeudor/consultar-codeudor/consul
 import { ConsultarDepartamentoComponent } from './departamento/consultar-departamento/consultar-departamento.component';
 import { ConsultarEstadoSolicitudComponent } from './estado_solicitud/consultar-estado-solicitud/consultar-estado-solicitud.component';
 import { ConsultarInmueblesComponent } from './inmuebles/consultar-inmuebles/consultar-inmuebles.component';
+import { EditarInmueblesComponent } from './inmuebles/editar-inmuebles/editar-inmuebles.component';
 import { ConsultarRolesComponent } from './roles/consultar-roles/consultar-roles.component';
 import { ConsultarSolicitudComponent } from './solicitud/consultar-solicitud/consultar-solicitud.component';
 import { ConsultarTipoInmuebleComponent } from './tipo_inmueble/consultar-tipo-inmueble/consultar-tipo-inmueble.component';
@@ -13,10 +14,9 @@ import { ConsultarTipoOfertaComponent } from './tipo_oferta/consultar-tipo-ofert
 
 const routes: Routes = [
   { path:"consultar",component: ConsultarInmueblesComponent},
-
   { path:"ciudad",component: ConsultarCiudadComponent},
   { path:"editarCiudad/:id",component: EditarCiudadComponent},
-
+  { path:"inmueble",component: ConsultarInmueblesComponent},
   { path:"departamento",component: ConsultarDepartamentoComponent},
   { path:"roles",component: ConsultarRolesComponent},
   { path:"estadosolicitud",component: ConsultarEstadoSolicitudComponent},
@@ -24,7 +24,7 @@ const routes: Routes = [
   { path:"tipoinmueble",component: ConsultarTipoInmuebleComponent},
   { path:"tipooferta",component: ConsultarTipoOfertaComponent},
   { path:"codeudor",component: ConsultarCodeudorComponent},
-
+  { path:"editarinmueble/:id",component: EditarInmueblesComponent},
 
 ];
 

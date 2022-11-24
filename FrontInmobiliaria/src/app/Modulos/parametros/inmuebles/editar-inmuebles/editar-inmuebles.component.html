@@ -1,1 +1,54 @@
-<p>editar-inmuebles works!</p>
+<body>
+
+    <header>
+        <figure class="logo">
+            <img width="350" [src]="img" alt="">
+        </figure>
+    </header>
+
+    <div class="container">
+        <h2 class="container-title">Edición</h2>
+        <form [formGroup]="formularioEdicion" action="" class="container-form">
+            <input style="
+            width: 270px;
+        height: 55px;
+        margin-bottom: 10px;
+        text-align: center;
+        border: solid 1px #fe5088;
+        border-radius: 50px;
+        outline: 0;
+            
+            " formControlName="precio" class="form01" type="text">
+
+            <input style="
+            width: 270px;
+        height: 55px;
+        margin-bottom: 10px;
+        text-align: center;
+        border: solid 1px #fe5088;
+        border-radius: 50px;
+        outline: 0;
+            
+            " formControlName="direccion" class="form01" type="text">
+
+
+
+
+            <button style="
+            
+        width: 180px;
+        height: 55px;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        border: 0;
+        border-radius: 50px;
+        color: white;
+        background-color: #fe5088;
+        font-size: 30px;
+        cursor: pointer;
+        font-family: 'Nunito';
+        font-weight: 500;"  class="button" type="submit" name="action">Enviar</button>
+        </form>
+
+    </div>
+</body>

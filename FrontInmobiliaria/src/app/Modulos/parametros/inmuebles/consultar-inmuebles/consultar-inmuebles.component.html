@@ -1,1 +1,25 @@
-<p>consultar-inmuebles works!</p>
+<fieldset class="container responsive-table">
+    <legend class="text" >Listado de Inmuebles</legend>
+    <table>
+        <thead>
+            <tr>
+            <th>Id</th>
+            <th>Direccion</th>
+            <th>Imagen</th>
+            <th>LinkYoutube</th>
+            <th>Edición</th>
+            <th>Eliminación</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let i of listaInmuebles">
+                <td>{{i.id}}</td>
+                <td>{{i.direccion}}</td>
+                <td><img width="100" src="{{i.imagen}}" alt="" srcset=""></td>
+                <td><a href="{{i.linkyoutube}}">Recorrido en video</a></td>
+                
+                <td><a  routerLink="../editarinmueble/{{i.id}}"><i class="large material-icons">create</i></a></td>
+            </tr>
+        </tbody>
+    </table>
+</fieldset>

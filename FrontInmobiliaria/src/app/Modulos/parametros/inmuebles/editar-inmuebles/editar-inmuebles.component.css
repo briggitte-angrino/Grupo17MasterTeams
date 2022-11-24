@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Nunito:wght@300&display=swap');
+:root {
+    --logo_01: rgb(254, 79, 136);
+    --logo_02: #7c2176;
+    --logo_03: #fe5088;
+    --form: rgba(217, 217, 217, 1);
+    --white01:white;
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: 'Nunito', sans-serif;
+    background-color:#fefbf8 ;
+    
+}
+
+.logo {
+    text-align: center;
+    margin-top: 80px;
+}
+
+/* contenedor del fornulario*/
+.container {
+    width: 390px;
+    height: 480px;
+    margin: 50px auto 0 auto;
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 100px;
+}
+
+
+.container-title {
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+
+.container-form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 370px;
+    height: 300px;
+    margin: 0 auto;
+}
+.container-registro {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 390px;
+    height: 56px;
+    border-radius: 0 0 10px 10px;
+    background-color: var(--logo_03);
+    color: var(--white01);
+}
+
+.registro-Link {
+    text-decoration: none;
+    margin-left: 10px;
+    color: var(--logo_02);
+}
+
+.form01, .form02 {
+    width: 270px;
+    height: 55px;
+    margin-bottom: 10px;
+    text-align: center;
+    border: solid 1px var(--logo_03);
+    border-radius: 50px;
+    outline: 0;
+}
+
+.button-login {
+    width: 180px;
+    height: 55px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    border: 0;
+    border-radius: 50px;
+
+    color: var(--white01);
+    background-color: var(--logo_03);
+    font-size: 30px;
+    font-family: 'Nunito';
+    font-weight: 800;
+}
+.check {
+    width: 350px;
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.recuerdame {
+    display: flex;
+       
+}
+#recuerdame {
+    margin-right: 5px;
+    cursor: pointer;    
+}
+.recuperar-Link {
+    text-decoration: none;
+}
+.errorValidacion label{
+    color: var(--logo_02);
+    font-weight: bold;
+}

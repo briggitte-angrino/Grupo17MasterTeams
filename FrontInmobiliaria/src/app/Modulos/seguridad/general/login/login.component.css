@@ -27,7 +27,7 @@ body{
 /* contenedor del fornulario*/
 .container {
     width: 390px;
-    height: 480px;
+    height: 580px;
     margin: 50px auto 0 auto;
     background-color: white;
     border-radius: 10px;
@@ -49,7 +49,7 @@ body{
     align-items: center;
 
     width: 370px;
-    height: 300px;
+    height: 400px;
     margin: 0 auto;
 }
 .container-registro {

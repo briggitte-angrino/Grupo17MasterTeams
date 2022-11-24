@@ -48,7 +48,15 @@
                 
             </div>                
             <p class="recuperarMensaje" ><a class="recuperar-Link" href="">Olvidaste tu contraseña</a> </p>
-        </div>            
+        </div>
+        <div class="containercaptcha">
+            <form [formGroup]="formularioLogin">
+            <ngx-recaptcha2 #captchaElem
+            [siteKey]="siteKey"
+            formControlName="recaptcha">
+           </ngx-recaptcha2>
+        </form>
+        </div>                      
         <button style="
         
     width: 180px;

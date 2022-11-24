@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { inmuebleModel } from 'src/app/Modelos/inmuebles.model';
+import { InmueblesService } from 'src/app/servicios/parametros/inmuebles/inmuebles.service';
 
 @Component({
   selector: 'app-consultar-inmuebles',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConsultarInmueblesComponent implements OnInit {
 
-  constructor() { }
+  
+
+  listaInmuebles: inmuebleModel[]=[];
+
+  constructor(
+    private servicioInmueble:InmueblesService
+  ) { }
 
   ngOnInit(): void {
+    this.Consultar();
+  }
+
+  Consultar(){
+    this.servicioInmueble.ConsultarInmuebles().subscribe({
+      next: (datos: inmuebleModel[])=>{
+        this.listaInmuebles=datos;
+      },
+      error: (e: any)=> console.log(e)
+    })
   }
 
 }

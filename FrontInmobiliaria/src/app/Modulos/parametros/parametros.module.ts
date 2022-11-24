@@ -41,7 +41,7 @@ import { CrearCodeudorComponent } from './codeudor/crear-codeudor/crear-codeudor
 import { ConsultarCodeudorComponent } from './codeudor/consultar-codeudor/consultar-codeudor.component';
 import { EditarCodeudorComponent } from './codeudor/editar-codeudor/editar-codeudor.component';
 import { EliminarCodeudorComponent } from './codeudor/eliminar-codeudor/eliminar-codeudor.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -87,7 +87,9 @@ import { EliminarCodeudorComponent } from './codeudor/eliminar-codeudor/eliminar
   ],
   imports: [
     CommonModule,
-    ParametrosRoutingModule
+    ParametrosRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class ParametrosModule { }
